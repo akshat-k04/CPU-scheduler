@@ -1,16 +1,20 @@
-3 2
-4
-1 0 8 s1
-2 1 4 s2
-3 2 9 s3
-4 3 5 s4
+7 2
+8
+1 0 3 s2
+2 1 2 i1
+3 2 6 b4
+4 4 4 s1
+5 5 1 i3
+6 7 2 b2
+7 8 5 s3
+8 9 1 i2
 
 
 Just copy and paste this above line in the testcase input_file
 and for custom testcase
-For SJFP,
+For MLQ,
 
-line1: 3<1 space>time_quantum_value
+line1: 7<1 space>time_quantum_value
 line2: no of process
 line 3 to n: pid   arrival_time    burst_time      priority
 

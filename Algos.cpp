@@ -374,7 +374,6 @@ void RR(vector<Process> & processes,int time_quantum){
         }
         
     }
-    for(auto v: time)cout<<v<<" ";cout<<endl ;
     print_trace(time,processes,"output/_output_RR.txt") ;
 }
 void MLQ(ProcessQueue &queue,int time_quantum){
@@ -492,4 +491,113 @@ void MLQ(ProcessQueue &queue,int time_quantum){
     }
     print_trace(time_line,queue.processes,"output/_output_MLQ.txt") ;
 } 
-void MLFQ(ProcessQueue &queue,int time_quantum){} 
+void MLFQ(ProcessQueue &queue,int time_quantum,int time_limit){
+    // I have 3 queue 
+    // I will use priority scheduling for the system process 
+    // round robin for the interactive process
+    // FCFS for the background
+    // auto & tp = queue.processes ;
+    // auto & sys_arr = queue.system_Processes , inter_arr = queue.interactive_Processes , back_arr = queue.background_Processes ;
+    // int total_process = tp.size() ;
+    
+    // dequeue<pair<Process,int>> sys_queue , inter_queue , back_queue ; 
+
+    // sort_arrivalTime(sys_arr.begin() , sys_arr.end()) ;
+    // sort_arrivalTime(inter_arr.begin() , inter_arr.end()) ;
+    // sort_arrivalTime(back_arr.begin() , back_arr.end()) ;
+
+
+    // vector<int> time_line ;
+    // int time =0 ;
+    // int sys_index =0 , inter_index =0 , back_index= 0;
+    // bool exe_inter = false , exe_back= false ,exe_sys =false;
+    // while(total_process!=0){// on every iteration I have to increase the time
+
+    //     while(sys_index<sys_arr.size() && sys_arr[sys_index].arrivalTime<=time) sys_queue.push_back({sys_arr[sys_index],sys_index}) ,sys_index++ ;
+    //     while(inter_index<inter_arr.size() && inter_arr[inter_index].arrivalTime<=time) inter_queue.push_back({inter_arr[inter_index],inter_index}) ,inter_index++ ;
+    //     while(back_index<back_arr.size() && back_arr[back_index].arrivalTime<=time) back_queue.push_back({back_arr[back_index],back_index}) ,back_index++ ;
+    //     start :;
+    //     if(!exe_back && !exe_inter && !exe_sys){
+    //         exe_sys = (sys_queue.size()!=0) ;
+    //         if(!exe_sys){
+    //             exe_inter = (inter_queue.size()!=0) ;
+    //             if(!exe_inter){
+    //                 exe_back = (back_queue.size()!=0) ;
+    //             }
+    //         }
+    //     }
+    //     time++ ;
+    //     if(exe_sys && sys_queue.size()!=0){
+
+    //         if(sys_queue.front().first.remainingTime%time_quantum==sys_queue.front().first.burstTime%time_quantum ){
+    //             sort_priority(sys_queue.begin() ,sys_queue.end()) ;
+    //         }
+
+    //         sys_arr[sys_queue.front().second].remainingTime--; sys_queue.front().first.remainingTime-- ;
+    //         time_line.push_back(sys_queue.front().first.processID) ;
+
+    //         if(sys_arr[sys_queue.front().second].remainingTime==0){
+    //             sys_arr[sys_queue.front().second].turnaroundTime=time - sys_arr[sys_queue.front().second].arrivalTime ;
+    //             sys_arr[sys_queue.front().second].waitingTime = sys_arr[sys_queue.front().second].turnaroundTime-sys_arr[sys_queue.front().second].burstTime ;
+    //             sys_queue.erase(sys_queue.begin()) ;
+    //             total_process-- ;
+    //             exe_sys=false ;
+    //         }
+    //     }
+    //     else if(exe_inter && inter_queue.size()!=0){
+
+    //         if(inter_queue.front().first.remainingTime%time_quantum==inter_queue.front().first.burstTime%time_quantum){
+    //             if(inter_queue.front().first.remainingTime !=inter_queue.front().first.burstTime){
+    //                 inter_queue.front().first.burstTime=inter_queue.front().first.remainingTime  ;
+    //                 inter_queue.push_back(inter_queue.front()) ;
+    //                 inter_queue.erase(inter_queue.begin()) ;
+    //                 exe_inter = false ;
+    //                 goto start ;
+    //             }
+    //         }
+
+    //         inter_arr[inter_queue.front().second].remainingTime--; inter_queue.front().first.remainingTime-- ;
+    //         time_line.push_back(inter_queue.front().first.processID) ;
+
+    //         if(inter_arr[inter_queue.front().second].remainingTime==0){
+    //             inter_arr[inter_queue.front().second].turnaroundTime=time - inter_arr[inter_queue.front().second].arrivalTime ;
+    //             inter_arr[inter_queue.front().second].waitingTime = inter_arr[inter_queue.front().second].turnaroundTime-inter_arr[inter_queue.front().second].burstTime ;
+    //             inter_queue.erase(inter_queue.begin()) ;
+    //             exe_inter = false ;
+    //             total_process-- ;
+    //         }
+    //     }
+    //     else if(exe_back && back_queue.size()!=0){
+    //         back_arr[back_queue.front().second].remainingTime--; back_queue.front().first.remainingTime-- ;
+    //         time_line.push_back(back_queue.front().first.processID) ;
+
+    //         if(back_arr[back_queue.front().second].remainingTime==0){
+    //             back_arr[back_queue.front().second].turnaroundTime=time - back_arr[back_queue.front().second].arrivalTime ;
+    //             back_arr[back_queue.front().second].waitingTime = back_arr[back_queue.front().second].turnaroundTime-back_arr[back_queue.front().second].burstTime ;
+    //             back_queue.erase(back_queue.begin()) ;
+    //             exe_back = false ;
+    //             total_process-- ;
+    //         }
+    //     }
+    //     else {
+    //         time_line.push_back(-1) ;
+    //     }
+        
+    // }
+    // for(auto & v: sys_arr){
+    //     for(int e=0 ;e<tp.size() ;e++){
+    //         if(tp[e].processID==v.processID){tp[e].turnaroundTime = v.turnaroundTime , tp[e].waitingTime= v.waitingTime ;break ;}
+    //     }
+    // }
+    // for(auto & v: inter_arr){
+    //     for(int e=0 ;e<tp.size() ;e++){
+    //         if(tp[e].processID==v.processID){tp[e].turnaroundTime = v.turnaroundTime , tp[e].waitingTime= v.waitingTime ;break ;}
+    //     }
+    // }
+    // for(auto & v: back_arr){
+    //     for(int e=0 ;e<tp.size() ;e++){
+    //         if(tp[e].processID==v.processID){tp[e].turnaroundTime = v.turnaroundTime , tp[e].waitingTime= v.waitingTime ;break ;}
+    //     }
+    // }
+    // print_trace(time_line,queue.processes,"output/_output_MLQ.txt") ;
+} 

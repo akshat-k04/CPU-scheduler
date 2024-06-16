@@ -5,13 +5,22 @@
 using namespace std ;
 
 
-void readInput(int &algo ,ProcessQueue &queue,string & filename){
+void readInput(int &algo ,ProcessQueue &queue,string & filename,int &time_quantum,int &time_limit){
     // now here we have to read the 
     ifstream inputFile(filename);
     if (inputFile.is_open()) {
         string line;
         getline(inputFile, line) ;
-        algo = (line[0]-'0') ;
+        algo = (line[0]-'0') ; 
+        if(algo!=1 && algo!=2 && algo != 4){
+            line.erase(line.begin()) ;line.erase(line.begin()) ;
+            time_quantum = stoi(line) ;
+        }
+        
+        if(algo>=8){
+            getline(inputFile, line) ;
+            time_limit =stoi(line) ;
+        }
         getline(inputFile, line) ;
         int no_process = (line[0]-'0') ;
 

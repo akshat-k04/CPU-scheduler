@@ -63,7 +63,7 @@ public:
 // Function declarations
 
 // Function to read process details
-void readInput(int &algo ,ProcessQueue &queue,string & filename);
+void readInput(int &algo ,ProcessQueue &queue,string & filename,int & time_quantum,int &time_limit);
 
 
 // Scheduling algorithm implementations
@@ -74,7 +74,7 @@ void Priority_scheduling_np(vector<Process> & processes);
 void Priority_scheduling_p(vector<Process> & processes,int time_quantum);
 void RR(vector<Process> & processes,int time_quantum);
 void MLQ(ProcessQueue &queue,int time_quantum) ;
-void MLFQ(ProcessQueue &queue,int time_quantum) ;
+void MLFQ(ProcessQueue &queue,int time_quantum,int time_limit) ;
 
 
 
