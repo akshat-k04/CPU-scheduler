@@ -75,7 +75,6 @@ void Priority_scheduling_p(vector<Process> & processes,int time_quantum);
 void RR(vector<Process> & processes,int time_quantum);
 void MLQ(ProcessQueue &queue,int time_quantum) ;
 void MLFQ(ProcessQueue &queue,int time_quantum) ;
-void Mix_algo(ProcessQueue &queue,int time_quantum) ;
 
 
 

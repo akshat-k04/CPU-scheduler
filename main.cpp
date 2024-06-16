@@ -38,7 +38,7 @@ int main() {
             MLFQ(queue,time_quantum) ;
             break;
         default:
-            Mix_algo(queue,time_quantum) ;
+            MLFQ(queue,time_quantum) ;
             break;
     }
     return 0;
