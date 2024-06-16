@@ -53,7 +53,7 @@
    - I/O bound and interactive processes remain in higher-priority queues.
    - A process that waits too long in a lower-priority queue may be moved to a higher-priority queue. This form of aging prevents starvation.
 
-### Project Requirement
+## Project Requirement
 
 1. The scheduling of processes is done by 3 algorithms in MLQ and MLFQ:
    - For system processes, implement preemptive priority scheduling.
@@ -62,7 +62,7 @@
 
 2. If a user wants to schedule the process with a particular algorithm, refer to the corresponding sample input file.
 
-### Directions to Run the Code
+## Directions to Run the Code
 
 1. Clone this repo.
 2. Open the `testcases` directory and copy the absolute path of `testcase.txt`.
