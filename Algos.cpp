@@ -168,7 +168,7 @@ void FCFS(vector<Process> & processes){
         }
         else time.push_back(-1) ;
     }
-    print_trace(time,processes,"_output_FCFS.txt") ;
+    print_trace(time,processes,"output/_output_FCFS.txt") ;
 }
 void SJFNP(vector<Process> & processes){
 
@@ -207,7 +207,7 @@ void SJFNP(vector<Process> & processes){
         }
     }
 
-    print_trace(time,processes,"_output_SJFNP.txt") ;
+    print_trace(time,processes,"output/_output_SJFNP.txt") ;
     
 }
 void SJFP(vector<Process> & processes,int time_quantum){
@@ -248,7 +248,7 @@ void SJFP(vector<Process> & processes,int time_quantum){
         }
     }
 
-    print_trace(time,processes,"_output_SJFP.txt") ;
+    print_trace(time,processes,"output/_output_SJFP.txt") ;
     
 }
 void Priority_scheduling_np(vector<Process> & processes){
@@ -287,7 +287,7 @@ void Priority_scheduling_np(vector<Process> & processes){
         }
     }
 
-    print_trace(time,processes,"_output_PSNP.txt") ;
+    print_trace(time,processes,"output/_output_PSNP.txt") ;
     
 }
 void Priority_scheduling_p(vector<Process> & processes,int time_quantum){
@@ -329,7 +329,7 @@ void Priority_scheduling_p(vector<Process> & processes,int time_quantum){
         }
     }
 
-    print_trace(time,processes,"_output_PSP.txt") ;
+    print_trace(time,processes,"output/_output_PSP.txt") ;
     
 }
 void RR(vector<Process> & processes,int time_quantum){
@@ -375,7 +375,7 @@ void RR(vector<Process> & processes,int time_quantum){
         
     }
     for(auto v: time)cout<<v<<" ";cout<<endl ;
-    print_trace(time,processes,"_output_RR.txt") ;
+    print_trace(time,processes,"output/_output_RR.txt") ;
 }
 void MLQ(ProcessQueue &queue,int time_quantum){
     // I have 3 queue 
@@ -490,6 +490,6 @@ void MLQ(ProcessQueue &queue,int time_quantum){
             if(tp[e].processID==v.processID){tp[e].turnaroundTime = v.turnaroundTime , tp[e].waitingTime= v.waitingTime ;break ;}
         }
     }
-    print_trace(time_line,queue.processes,"_output_MLQ.txt") ;
+    print_trace(time_line,queue.processes,"output/_output_MLQ.txt") ;
 } 
 void MLFQ(ProcessQueue &queue,int time_quantum){} 

@@ -1,1 +1,0 @@
-g++ main.cpp read_process.cpp -o my_program  

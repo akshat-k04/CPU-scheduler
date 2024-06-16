@@ -2,7 +2,7 @@
 #include "Scheduler.h"
 using namespace std ;
 
-string filename="C:/Users/HP/programming/3 c++ notes/core c++ concept/lect8 OS/projrct/CPU scheduler/testcase1.txt" ;
+string input_file="C:/Users/HP/programming/3 c++ notes/core c++ concept/lect8 OS/projrct/CPU scheduler/testcases/testcase1.txt" ;
 int time_quantum =2 ;
 
 int main() {
@@ -10,7 +10,7 @@ int main() {
     int algo ; 
     
 
-    readInput(algo ,queue,filename);
+    readInput(algo ,queue,input_file);
 
     switch (algo) {
         case 1:
