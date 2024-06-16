@@ -8,7 +8,6 @@
 6 6 3 s6
 
 
-first line decides the algo
-second line decides the number of process
-from 3rd line 
+algo(RR)
+decides the number of process
 pid    arrival_time    burst_time    Priority
