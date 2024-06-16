@@ -22,7 +22,7 @@ void readInput(int &algo ,ProcessQueue &queue,string & filename,int &time_quantu
             time_limit =stoi(line) ;
         }
         getline(inputFile, line) ;
-        int no_process = (line[0]-'0') ;
+        int no_process = stoi(line) ;
 
         for(int i =0 ;i<no_process;i++){
             getline(inputFile, line) ;

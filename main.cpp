@@ -2,6 +2,9 @@
 #include "Scheduler.h"
 using namespace std ;
 
+
+
+// REPLACE THE FILE PATH
 string input_file="C:/Users/HP/programming/3 c++ notes/core c++ concept/lect8 OS/projrct/CPU scheduler/testcases/testcase.txt" ;
 
 
