@@ -1,3 +1,5 @@
+# CPU scheduler
+
 ## Time Definitions
 
 1. **Throughput**: Number of processes completed per unit time.
